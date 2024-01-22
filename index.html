@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Product Counter</title>
+    <style>
+      body {
+        font-family: "Arial", sans-serif;
+        margin: 20px;
+        background-color: #f7f7f7;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+
+      .product {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 1px solid #ccc;
+        padding: 15px;
+        background-color: #fff;
+        width: 300px;
+        margin-bottom: 10px;
+        border-radius: 8px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease-in-out;
+      }
+
+      .product:hover {
+        transform: scale(1.05);
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      }
+
+      .product span {
+        font-size: 18px;
+        color: #333;
+        flex-grow: 1;
+      }
+
+      .counter {
+        display: flex;
+        align-items: center;
+      }
+
+      .counter button {
+        margin: 0 5px;
+        cursor: pointer;
+        background-color: #4caf50;
+        color: #fff;
+        border: none;
+        padding: 8px;
+        border-radius: 4px;
+        transition: background-color 0.3s ease-in-out;
+      }
+
+      .counter button:hover {
+        background-color: #45a049;
+      }
+
+      .counter span {
+        font-size: 20px;
+        color: #333;
+        margin: 0 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="product" id="product1">
+      <span>Kakao 1,50€</span>
+      <div class="counter">
+        <button onclick="decrementCounter('product1')">-</button>
+        <span id="counter_product1">0</span>
+        <button onclick="incrementCounter('product1')">+</button>
+      </div>
+    </div>
+
+    <div class="product" id="product2">
+      <span>Granola Riegel 0,70€</span>
+      <div class="counter">
+        <button onclick="decrementCounter('product2')">-</button>
+        <span id="counter_product2">0</span>
+        <button onclick="incrementCounter('product2')">+</button>
+      </div>
+    </div>
+
+    <div class="product" id="product3">
+      <span>Kinderriegel 0.40€</span>
+      <div class="counter">
+        <button onclick="decrementCounter('product3')">-</button>
+        <span id="counter_product3">0</span>
+        <button onclick="incrementCounter('product3')">+</button>
+      </div>
+    </div>
+
+    <div class="product" id="product4">
+      <span>Kinder Country 0.60€</span>
+      <div class="counter">
+        <button onclick="decrementCounter('product4')">-</button>
+        <span id="counter_product4">0</span>
+        <button onclick="incrementCounter('product4')">+</button>
+      </div>
+    </div>
+
+    <div class="product" id="product5">
+      <span>Kinder Bueno 0.90€</span>
+      <div class="counter">
+        <button onclick="decrementCounter('product5')">-</button>
+        <span id="counter_product5">0</span>
+        <button onclick="incrementCounter('product5')">+</button>
+      </div>
+    </div>
+
+    <div class="product" id="product6">
+      <span>Kinder Cards 1.00€</span>
+      <div class="counter">
+        <button onclick="decrementCounter('product6')">-</button>
+        <span id="counter_product6">0</span>
+        <button onclick="incrementCounter('product6')">+</button>
+      </div>
+    </div>
+
+    <div class="product" id="product7">
+      <span>Duplo 0.60€</span>
+      <div class="counter">
+        <button onclick="decrementCounter('product7')">-</button>
+        <span id="counter_product7">0</span>
+        <button onclick="incrementCounter('product7')">+</button>
+      </div>
+    </div>
+
+    <div class="product" id="product8">
+      <span>Durstlöscher 1.40€</span>
+      <div class="counter">
+        <button onclick="decrementCounter('product8')">-</button>
+        <span id="counter_product8">0</span>
+        <button onclick="incrementCounter('product8')">+</button>
+      </div>
+    </div>
+
+    <div class="product" id="product9">
+      <span>Hörnchen 1.40€</span>
+      <div class="counter">
+        <button onclick="decrementCounter('product9')">-</button>
+        <span id="counter_product9">0</span>
+        <button onclick="incrementCounter('product9')">+</button>
+      </div>
+    </div>
+
+    <!-- Repeat the product block for other products -->
+
+    <script>
+      function incrementCounter(productId) {
+        var counterElement = document.getElementById("counter_" + productId);
+        var count = parseInt(counterElement.innerText);
+        counterElement.innerText = count + 1;
+      }
+
+      function decrementCounter(productId) {
+        var counterElement = document.getElementById("counter_" + productId);
+        var count = parseInt(counterElement.innerText);
+        if (count > 0) {
+          counterElement.innerText = count - 1;
+        }
+      }
+    </script>
+  </body>
+</html>
